@@ -201,6 +201,7 @@ fn command_with_afl_version() -> clap::Command {
 
 fn afl_version() -> Option<String> {
     const PREFIX: &str = "afl-fuzz++";
+    println!("{:?}", common::afl_dir());
     let afl_fuzz_path = common::afl_dir().unwrap().join("bin/afl-fuzz");
     let output = Command::new(afl_fuzz_path).output().ok()?;
     let stdout = String::from_utf8(output.stdout).ok()?;

@@ -23,6 +23,7 @@ fn data_dir(dir_name: &str) -> Result<PathBuf> {
     // don't change that for now for normal builds.
     // smoelius: AFL++ is no longer built on docs.rs.
     let xdg_dir = xdg_dir()?;
+    println!("{:?}", xdg_dir);
     xdg_dir.create_data_directory(dir_name)
 }
 
